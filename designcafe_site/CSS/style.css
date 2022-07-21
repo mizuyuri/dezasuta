@@ -80,7 +80,7 @@ body {
     line-height: 1.222;
     color: #fff;
     font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
-    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+        "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
     text-align: center;
     width: 105px;
     margin-right: 45px;
@@ -127,18 +127,22 @@ body {
     padding: 0 10px;
 }
 
+.about_us_pic {
+    width: 50%;
+}
+
 .about_us_pic img {
-    margin-right: 85px;
     border-radius: 0 0 60px 0;
 }
 
 .about_us_box {
     display: flex;
-    max-width:1000px;
+    max-width: 1000px;
     margin: 0 auto;
     margin-bottom: 108px;
     padding: 0 10px;
     box-sizing: border-box;
+    justify-content: space-between;
 }
 
 .about_us_text {
@@ -176,9 +180,10 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     box-sizing: border-box;
+    padding: 0 10px;
 }
 
-.menu_wrap > div {
+.menu_wrap>div {
     display: flex;
     justify-content: space-between;
     margin-bottom: 95px;
@@ -186,7 +191,6 @@ body {
 
 .menu_items {
     width: 30%;
-    padding: 0 10px;
 }
 
 .menu_items img {
@@ -210,6 +214,10 @@ body {
 
 
 /* イベント */
+.event {
+    padding: 0 10px;
+}
+
 .event_wrap {
     max-width: 1000px;
     background: #fff;
@@ -218,7 +226,6 @@ body {
     box-sizing: border-box;
     font-size: 23px;
     margin-bottom: 80px;
-    /* padding: 0 10px; */
 }
 
 .event_wrap ul {
@@ -249,14 +256,14 @@ body {
 /* フッター */
 .footer {
     background: #fff;
+    padding: 0 10px;
 }
 
 .footer_wrap {
     display: flex;
-    width: 1000px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-top: 80px;
-
 }
 
 .logo_footer {
