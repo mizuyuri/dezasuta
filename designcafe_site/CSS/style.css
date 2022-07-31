@@ -1,6 +1,5 @@
 @charset "utf-8";
 
-
 /* リセット */
 html,
 body,
@@ -48,6 +47,11 @@ img {
     max-width: 100%;
     vertical-align: bottom;
     border: none;
+}
+
+/* スムーススクロール（CSS） */
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -108,7 +112,6 @@ body {
 .lead_en {
     font-size: 30px;
     margin: 100px 0 50px;
-    padding: 0 10px;
 }
 
 .lead_main {
@@ -116,7 +119,6 @@ body {
     font-weight: normal;
     line-height: 1.1;
     margin-bottom: 30px;
-    padding: 0 10px;
 }
 
 .lead_sub {
@@ -124,7 +126,11 @@ body {
     font-weight: normal;
     line-height: 1.625;
     margin-bottom: 105px;
-    padding: 0 10px;
+}
+
+/* スマホ用リード文　PC版では非表示 */
+.lead_sub_sp {
+    display: none;
 }
 
 .about_us_pic {
@@ -164,8 +170,13 @@ body {
 
 .main_text {
     font-size: 16px;
-    text-align: left;
+    text-align: justify;
     line-height: 1.5;
+}
+
+/* sp用 About us PCでは非表示*/
+.about_us_box_sp {
+    display: none;
 }
 
 /* メニュー */
@@ -186,7 +197,7 @@ body {
 .menu_wrap>div {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 95px;
+    margin-bottom: 90px;
 }
 
 .menu_items {
@@ -208,6 +219,7 @@ body {
 
 .menu_items p {
     line-height: 1.5;
+    text-align: justify;
 }
 
 /* ギャラリー */
@@ -291,4 +303,310 @@ body {
     bottom: 20px;
     right: 20px;
     width: 125px;
+}
+
+
+/* スマホ用メニューをPCでは消す */
+.sp_nav {
+    display: none;
+}
+
+.sp_btn {
+    display: none;
+}
+
+@media screen and (max-width:1100px) {
+
+    .logo {
+        width: 185px;
+    }
+
+    .pc_nav {
+        display: none;
+    }
+
+    .sp_btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        height: 30px;
+        z-index: 100;
+    }
+
+    .sp_btn span {
+        background: #fff;
+        display: block;
+        width: 33px;
+        height: 3px;
+        position: relative;
+        top: 10px;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before,
+    .sp_btn span::after {
+        content: '';
+        background: #fff;
+        display: block;
+        width: 33px;
+        height: 3px;
+        position: absolute;
+        transition: 0.3s;
+    }
+
+    .sp_btn span::before {
+        bottom: 10px;
+    }
+
+    .sp_btn span::after {
+        top: 10px;
+    }
+
+    /* open時 */
+    .open span {
+        background: transparent;
+    }
+
+    .open span::before {
+        bottom: 0px;
+        transform: rotate(45deg);
+    }
+
+    .open span::after {
+        top: 0px;
+        transform: rotate(135deg);
+    }
+
+    .sp_nav {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+    }
+
+    .sp_nav ul {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .sp_nav ul li {
+        padding: 20px 0;
+        color: #fff;
+        font-size: 20px;
+        font-family: "游ゴシック体", YuGothic, "游ゴシック Medium",
+            "Yu Gothic Medium", "游ゴシック", "Yu Gothic", sans-serif;
+        text-align: center;
+    }
+
+    /* lead */
+    .lead_en {
+        font-size: 25px;
+        margin: 45px 0 30px;
+    }
+
+    .lead_main {
+        font-size: 70px;
+    }
+
+    .sub_title {
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    /* lead */
+    .lead_en {
+        font-size: 4.5vw;
+    }
+
+    .lead_main {
+        font-size: 9.8vw;
+        letter-spacing: 0.01em;
+        margin-bottom: 25px;
+    }
+
+    /* PC用リード文　スマホでは非表示 */
+    .lead_sub {
+        display: none;
+    }
+
+    .lead_sub_sp {
+        display: flex;
+        font-size: 4.2vw;
+        font-weight: normal;
+        line-height: 1.8;
+        letter-spacing: 0.1em;
+        margin-bottom: 65px;
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    /* PC用 About us スマホでは非表示 */
+    .about_us_box {
+        display: none;
+    }
+
+    /* sp用 About us */
+    .about_us_box_sp {
+        display: block;
+    }
+
+    .main_title img {
+        display: block;
+        height: 45px;
+        margin: 0 auto;
+    }
+
+    .about_us_pic {
+        width: 100%;
+    }
+
+    .about_us_pic img {
+        border-radius: 0;
+        margin: 10px 0 30px;
+    }
+
+    .about_us_text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .sub_title {
+        max-width: 345px;
+        font-size: 36px;
+        text-align: left;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    .main_text {
+        max-width: 345px;
+        font-size: 16px;
+        text-align: justify;
+        line-height: 1.8;
+        margin: 0 auto;
+        margin-bottom: 55px;
+    }
+
+    /* メニュー */
+    .title {
+        height: 45px;
+        margin-bottom: 20px;
+    }
+
+    .title img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .menu_wrap {
+        padding: 0 10px;
+    }
+
+    .menu_wrap>div {
+        display: block;
+    }
+
+    .menu_items {
+        width: 76%;
+        margin: 0 auto;
+    }
+
+    .menu_items h3 {
+        color: #d30202;
+        font-size: 40px;
+        font-weight: normal;
+        padding-left: 10px;
+        margin-top: -15px;
+        margin-bottom: 18px;
+    }
+
+    .menu_items p {
+        line-height: 1.5;
+        text-align: justify;
+        margin-bottom: 40px;
+    }
+
+    /* ギャラリー */
+
+
+    /* イベント */
+    .event_wrap {
+        max-width: 335px;
+        height: 200px;
+        background: #fff;
+        margin: 0 auto;
+        border: 4px solid #4f260b;
+        box-sizing: border-box;
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+
+    .event_wrap ul {
+        max-width: 260px;
+        margin: 15px auto;
+    }
+
+    .event_wrap li {
+        display: block;
+        margin: 0 auto;
+        line-height: 1.1;
+    }
+
+    .day {
+        margin-bottom: 5px;
+    }
+
+    .text {
+        width: 260px;
+        margin-bottom: 20px;
+        /* 要素の横幅を指定 */
+        white-space: nowrap;
+        /* 横幅のMAXに達しても改行しない */
+        overflow: hidden;
+        /* はみ出した部分を隠す */
+        text-overflow: ellipsis;
+        /* 「…」と省略 */
+        -webkit-text-overflow: ellipsis;
+        /* Safari */
+    }
+
+    /* アクセス */
+    .map iframe {
+        height: 190px;
+    }
+
+    /* フッター */
+    .footer_wrap {
+        display: block;
+        margin-left: 10px;
+        padding-top: 50px;
+    }
+
+    .logo_footer {
+        width: 227px;
+        margin: 0 0 35px 0;
+    }
+
+    .footer_info ul li {
+        font-size: 18px;
+        line-height: 1.8;
+    }
+
+    .footer p small {
+        padding: 50px 0 35px;
+    }
+
+    .toTop {
+        width: 100px;
+    }
+
 }
